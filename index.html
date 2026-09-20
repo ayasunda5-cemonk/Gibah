@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ngobrol</title>
+    <!-- Link ke CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome untuk ikon (opsional, tapi bagus untuk UI) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- HALAMAN LOGIN (Masukkan Nama) -->
+    <div id="login-screen" class="screen active">
+        <div class="login-box">
+            <h2>Masuk ngobrol</h2>
+            <p>Pilih nama dan avatar kamu</p>
+            
+            <input type="text" id="username-input" placeholder="Nama Panggilan..." maxlength="15">
+            
+            <div class="avatar-selection">
+                <label>Pilih Avatar:</label>
+                <div class="avatars">
+                    <img src="https://api.dicebear.com/7.x/adventurer/svg?seed=Felix" class="avatar-option selected" onclick="selectAvatar(this)">
+                    <img src="https://api.dicebear.com/7.x/adventurer/svg?seed=Aneka" class="avatar-option" onclick="selectAvatar(this)">
+                    <img src="https://api.dicebear.com/7.x/adventurer/svg?seed=Bear" class="avatar-option" onclick="selectAvatar(this)">
+                    <img src="https://api.dicebear.com/7.x/adventurer/svg?seed=Cody" class="avatar-option" onclick="selectAvatar(this)">
+                </div>
+            </div>
+
+            <button onclick="joinChat()">Mulai Mengobrol</button>
+        </div>
+    </div>
+
+    <!-- HALAMAN CHAT UTAMA -->
+    <div id="chat-screen" class="screen">
+        <!-- Header Chat -->
+        <div class="chat-header">
+            <div class="user-info">
+                <img id="current-user-avatar" src="" alt="Avatar">
+                <span id="display-name">User</span>
+            </div>
+            <button onclick="logout()" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Keluar</button>
+        </div>
+
+        <!-- Area Pesan -->
+        <div id="messages-container" class="messages-area">
+            <!-- Pesan akan muncul di sini via JS -->
+        </div>
+
+        <!-- Input Pesan -->
+        <div class="input-area">
+            <button id="emoji-btn" onclick="toggleEmojiPicker()">😊</button>
+            
+            <!-- Picker Emoji Sederhana -->
+            <div id="emoji-picker" class="hidden">
+                <span onclick="addEmoji('😀')">😀</span>
+                <span onclick="addEmoji('😂')">😂</span>
+                <span onclick="addEmoji('😍')">😍</span>
+                <span onclick="addEmoji('👍')">👍</span>
+                <span onclick="addEmoji('🔥')">🔥</span>
+                <span onclick="addEmoji('😢')">😢</span>
+                <span onclick="addEmoji('😡')">😡</span>
+                <span onclick="addEmoji('🎉')">🎉</span>
+            </div>
+
+            <input type="text" id="message-input" placeholder="Tulis pesan...">
+            <button onclick="sendMessage()" class="send-btn"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <!-- Link ke JavaScript -->
+    <script src="script.js"></script>
+  <script src="https://cdn.pubnub.com/sdk/javascript/pubnub.7.2.0.min.js"></script
+</body>
+</html>
