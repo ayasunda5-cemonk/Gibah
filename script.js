@@ -1,7 +1,10 @@
 // --- KONFIGURASI PUBNUB (GANTI DENGAN KEY ANDA SENDIRI) ---
 const pubnub = new PubNub({
-    publishKey: 'YOUR_PUBLISH_KEY_HERE', // Ganti dengan Publish Key dari Dashboard PubNub
-    subscribeKey: 'YOUR_SUBSCRIBE_KEY_HERE' // Ganti dengan Subscribe Key dari Dashboard PubNub
+    publishKey: 'YOUR_PUBLISH_KEY_HERE', // pub-c-b44146b8-38d0-42b5-b49b-602365272a81
+
+
+    
+    subscribeKey: 'YOUR_SUBSCRIBE_KEY_HERE' // sub-c-dfc0ba8d-c88b-4104-837f-88609bacbbc2
 });
 
 const channel = 'chat-teman-sederhana'; // Nama room chat (bisa diganti sesuka hati)
